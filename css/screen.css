@@ -272,7 +272,7 @@ a:focus {
         flex-wrap: wrap;
     }
     .c-article__author{
-        width: 25%;
+        width: 75%;
         padding-right: 24px;
     }
     .c-article__content{
