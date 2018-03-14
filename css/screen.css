@@ -44,6 +44,8 @@ html {
     font-family: "Droid Serif", Georgia, serif;
     color: #5C6366;
     padding: 48px 24px 24px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -57,7 +59,6 @@ body {
  *
  * Customize the background color to match your design.
  */
-
 ::-moz-selection {
     background: #e85e00;
     color: white;
@@ -91,6 +92,7 @@ h1,h2,h3{
     font-family: "Inter UI",Helvetica, sans-serif;
 }
 h1 {
+    font-family: "Playfair Display", serif;
     font-size: 36px;
     line-height: 40px;
     margin: 0 0 48px;
