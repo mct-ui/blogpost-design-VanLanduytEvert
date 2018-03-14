@@ -1,57 +1,72 @@
 /*
-    Elements: Page
+    Fonts
     ---
-    Default markup for page level elements
+    @font-face declarations
 */
-@font-face {
-    font-family: "Droid Serif";
-    font-weight: 400;
-    src: url("../fonts/Inter-UI-Regular-webfont.woff") format("woff");
-}
-@font-face {
-    font-family: "Droid Serif";
-    font-weight: 400;
-    font-style: italic;
-    src: url("../fonts/Inter-UI-Italic-webfont.woff") format("woff");
-}
-@font-face {
-    font-family: "Droid Serif";
-    font-weight: 700;
-    src: url("../fonts/Inter-UI-Bold-webfont.woff") format("woff");
-}
-@font-face {
-    font-family: "Droid Serif";
-    font-weight: 700;
-    font-style: italic;
-    src: url("../fonts/Inter-UI-BoldItalic-webfont.woff") format("woff");
-}
 
 @font-face {
     font-family: "Inter UI";
     font-weight: 400;
     src: url("../fonts/Inter-UI-Regular.woff2") format("woff2"),
-         url("../fonts/Inter-UI-Regular.woff") format("woff");
+       url("../fonts/Inter-UI-Regular.woff") format("woff");
 }
+
 @font-face {
-    font-family: "Inter UI";
+    font-family: "Inter UI"
     font-weight: 700;
     src: url("../fonts/Inter-UI-Bold.woff2") format("woff2"),
-         url("../fonts/Inter-UI-Bold.woff") format("woff");
+       url("../fonts/Inter-UI-Bold.woff") format("woff");
 }
+
+@font-face {
+    font-family: "Droid Serif"
+    font-weight: 400;
+    src: url("../fonts/DroidSerif-Regular-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Droid Serif"
+    font-weight: 400;
+    font-style: italic;
+    src: url("../fonts/DroidSerif-Italic-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Droid Serif"
+    font-weight: 700;
+    src: url("../fonts/DroidSerif-Bold-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Droid Serif"
+    font-weight: 700;
+    font-style: italic;
+    src: url("../fonts/DroidSerif-BoldItalic-webfont.woff") format("woff");
+}
+
+/*
+    Elements: Page
+    ---
+    Default markup for page level elements
+*/
+
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Droid Serif", Georgia, serif;
+    /*font-family: "Inter UI", "Helvetica Neue", Helvetica, arial, sans-serif;*/
+    font-family: "Droid Serif whatever", Georgia serif;
     color: #5C6366;
-    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
 }
 
-body {
-
-    margin: 0 auto;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -59,6 +74,7 @@ body {
  *
  * Customize the background color to match your design.
  */
+
 ::-moz-selection {
     background: #e85e00;
     color: white;
@@ -69,6 +85,92 @@ body {
     background: #00E6A1;
     color: white;
     text-shadow: none;
+}
+
+/*
+    Components: Type
+    ---
+    Special typography classes
+*/
+
+.c-type-meta {
+    font-size: 14px;
+    font-family: "Inter UI", "Helvetica Neue", Helvetica, arial, sans-serif;
+    line-height: 16px;
+    margin-top: 4px;
+}
+
+/*
+    Components: Author
+*/
+
+.c-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.c-author__image {
+    width: 56px;
+    height: 56px;
+    margin-right: 10px;
+    border-radius: 100%;
+    margin-left: 16px;
+}
+
+.c-author__caption {
+    padding-top: 0;
+}
+
+.c-author__name,.c-author_meta {
+    margin-bottom: 0;
+}
+
+.c-author__name {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.c-article__date {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements.
+*/
+
+.u-max.width-sm {
+    max-width: 36em;
+}
+
+
+
+/*
+    Utilities: Spacing
+    ---
+    Utility classes to put specific spacing values onto elements.
+*/
+
+/*
+    Components: Article
+*/
+
+.c-article__header,
+.c-article__body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.c-article__header {
+  padding: 24px 24px 0;
+}
+
+.c-article__body {
+  padding: 0 24px;
 }
 
 /*
@@ -87,12 +189,55 @@ img {
     ---
     Default markup for typographic elements
 */
-h1,h2,h3{
-    color: #17181A;
-    font-family: "Inter UI",Helvetica, sans-serif;
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 46px;
+        line-height: 56px;
+    }
+
+    .c-article__header {
+        padding: 48px 48px 24px;
+    }
+
+    .c-article__body {
+        padding: 24px 48px;
+    }
 }
+
+@media (min-width: 992px) {
+    .c-article__body {
+        display: flex;
+    }
+
+    .c-article__author {
+        width: 25%;
+        padding-right: 24px;
+    }
+
+    .c-article__content {
+        width: 75%;
+    }
+
+    h1 {
+        font-size:52px;
+        line-height:64px;
+    }
+}
+
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 58px;
+        line-height: 72px;
+    }
+}
+
+h1, h2, h3 {
+    color:#17181A;
+    font-family: "Inter UI", "Helverica Neue", Helvetica, arial, sans-serif;
+}
+
 h1 {
-    font-family: "Playfair Display", serif;
     font-size: 36px;
     line-height: 40px;
     margin: 0 0 24px;
@@ -103,7 +248,8 @@ h2 {
     line-height: 32px;
     margin: 0 0 24px;
 }
-*+h2{
+
+*+h2 {
     margin-top: 48px;
 }
 
@@ -158,6 +304,7 @@ figcaption {
     font-size: 12px;
     line-height: 16px;
     padding-top: 8px;
+    color: Grey;
 }
 
 hr {
@@ -168,9 +315,7 @@ hr {
 }
 
 a {
-    background: #00E6A1;
-    color: white;
-    text-shadow: none;
+    color: #00A1E6;
     transition: all .1s ease-in-out;
 }
 
@@ -184,59 +329,6 @@ a:focus {
     color: #1ABAFF;
 }
 
-*,*:before,*:after{
-    box-sizing: inherit;
-}
-
-.c-author__name,.c-author__name{
-    margin-bottom: 0;
-}
-.c-author__meta{
-    font-size: 16px;
-    line-height: 16px;
-}
-.c-author__meta{
-    font-size: 14px;
-    font-family: "Inter UI", "Helvetica Neue", sans-serif;
-    line-height: 16px;
-    margin-top: 4px;
-
-}
-.c-author{
-    display: flex;
-    align-items: center;
-    margin-bottom: 48px;
-}
-.c-author__image{
-    width: 56px;
-    height: 56px;
-    border-radius: 100%;
-    margin-right: 16px;
-}
-.c-author__caption{
-    padding-top: 0;
-}
-
-.c-article__header,.c-article__body{
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.c-article__header{
-    padding: 24px 24px 0;
-}
-.c-article__body{
-    padding: 0 24px;
-}
-
-.u-max-width-sm{
-    max-width: 36em;
-}
-.c-article__date{
-    font-size: 14px;
-    line-height: 16px;
-    margin-bottom: 8px;
-}
-
 /* Small devices (landscape phones, 576px and up) */
 
 @media (min-width: 576px) {}
@@ -244,56 +336,30 @@ a:focus {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-
-    h1 {
-        font-size: 46px;
-        line-height: 56px;
-    }
-    .c-article__header{
+  /*  html {
         padding: 48px 48px 24px;
     }
-    .c-article__author{
-        padding-bottom: 24px;
-    }
-    .c-article__body{
-        padding: 24px 48px;
-    }
+    h1 {
+        font-size: 58px;
+        line-height: 64px;
+    }*/
 }
 
 /* Large devices (landscape tablets, desktops, 992px and up) */
 
 @media (min-width: 992px) {
-    h1{
-        font-size: 46px;
-        line-height: 56px;
-    }
-    .c-article__body{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .c-article__author{
-        width: 75%;
-        padding-right: 24px;
-    }
-    .c-article__content{
-        width: 75%;
-    }
-    .c-author{
+  /*  .c-author {
         display: block;
     }
-    .c-author__image{
+
+    .c-author__image {
         margin-bottom: 16px;
-    }
+    }*/
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 
-@media (min-width: 1200px) {
-    h1{
-        font-size: 58px;
-        line-height: 72px;
-    }
-}
+@media (min-width: 1200px) {}
 
 /*
     Print styles.
